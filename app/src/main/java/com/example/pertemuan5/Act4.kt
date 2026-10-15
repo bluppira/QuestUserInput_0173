@@ -1,5 +1,6 @@
 package com.example.pertemuan5
 
+import android.R.attr.thickness
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -15,6 +16,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -36,7 +38,7 @@ fun FormDataDiri(modifier: Modifier){
         OutlinedTextField(
             value = textNama,
             singleLine = true,
-            shape = MaterialTheme.shapes.Large,
+            shape = MaterialTheme.shapes.large,
             modifier = Modifier.width(250.dp),
             label = { Text(text = "Nama Lengkap") },
             onValueChange = {
@@ -69,7 +71,13 @@ fun FormDataDiri(modifier: Modifier){
             }
         )
         HorizontalDivider(
-            Modifer.padding(
-
-            )
+            modifier = Modifier.padding(
+                bottom =
+                    dimensionResource(id = R.dimen.padding_medium),
+                top = dimensionResource(
+                    id = R.dimen.padding_medium
+                )
+            ),
+            thickness = dimensionResource(id = R.dimen.divider_tipis),
+            color = Color.DarkGray
         )
